@@ -22,12 +22,6 @@ jobs:
           echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
         shell: bash
 
-      - name: Build Android APK
-        run: |
-          buildozer android debug --log_level 2 --with-build-python
-        working-directory: .
-
-
       - name: Cache Buildozer global directory
         uses: actions/cache@v3
         with:
@@ -43,7 +37,7 @@ jobs:
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
-          command: buildozer android debug --log_level 2
+          command: buildozer android debug --log_level 2 --with-build-python
           buildozer_version: stable
 
       - name: Upload artifacts
