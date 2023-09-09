@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: '16'
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v2
         with:
           python-version: 3.11.4
       - name: Upgrade python
@@ -23,8 +23,7 @@ jobs:
         run: pip install Cython
         
       - name: Install Dependencies
-        run: |
-          pip install jnius
+        run: pip install jnius
           
 
       - uses: actions/checkout@v3
