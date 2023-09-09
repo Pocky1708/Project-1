@@ -293,7 +293,7 @@ android.archs = arm64-v8a, armeabi-v7a
 android.allow_backup = True
 
 # Specify the --with-build-python flag
-android.buildozer.args = --with-build-python=.
+android.buildozer.args = --with-build-python
 
 # (str) XML file for custom backup rules (see official auto backup documentation)
 # android.backup_rules =
