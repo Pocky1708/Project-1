@@ -16,11 +16,15 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: 3.11.4
+
+      - name: Install pypi
+        run: pip install pypi-install
+          
       - name: Upgrade python
-        run: pip install --upgrade pip
+        run: install -U cython
         
-      - name: Install Cython
-        run: pip install Cython
+      - name: Install Buildozer
+        run: pip install buildozer
         
       - name: Install Dependencies
         run: pip install pyjnius
