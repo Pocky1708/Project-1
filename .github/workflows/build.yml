@@ -5,32 +5,10 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: 3.11.4
-
-      - name: Install pypi
-        run: pip install pypi-install
-          
-      - name: Upgrade python
-        run: pip install -U cython
-        
-      - name: Install Buildozer
-        run: pip install buildozer
-        
-      - name: Install Dependencies
-        run: pip install pyjnius
-          
-
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       # used to cache dependencies with a timeout
       - name: Get Date
@@ -40,12 +18,12 @@ jobs:
         shell: bash
 
       - name: Cache Buildozer global directory
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
           path: .buildozer_global
           key: buildozer-global-${{ hashFiles('buildozer.spec') }} # Replace with your path
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v2
         with:
           path: .buildozer
           key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('buildozer.spec') }}
@@ -54,11 +32,11 @@ jobs:
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
-          command: buildozer android debug --log_level 2 --with-build-python
+          command: buildozer android debug
           buildozer_version: stable
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: package
           path: ${{ steps.buildozer.outputs.filename }}
