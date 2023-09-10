@@ -21,7 +21,7 @@ jobs:
         run: pip install pypi-install
           
       - name: Upgrade python
-        run: install -U cython
+        run: pip install -U cython
         
       - name: Install Buildozer
         run: pip install buildozer
