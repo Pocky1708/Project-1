@@ -101,31 +101,31 @@ fullscreen = 0
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-android.api = 31
+#android.api = 31
 
 # (int) Minimum API your APK / AAB will support.
-android.minapi = 21
+#android.minapi = 21
 
 # (int) Android SDK version to use
 #android.sdk = 20
 
 # (str) Android NDK version to use
-android.ndk = 25b
+#android.ndk = 25b
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
-android.ndk_api = 21
+#android.ndk_api = 21
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
-android.private_storage = True
+#android.private_storage = True
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
-android.ndk_path =
+#android.ndk_path =
 
 # (str) Android SDK directory (if empty, it will be automatically downloaded.)
 #android.sdk_path =
 
 # (str) ANT directory (if empty, it will be automatically downloaded.)
-android.ant_path =
+#android.ant_path =
 
 # (bool) If True, then skip trying to update the Android sdk
 # This can be useful to avoid excess Internet downloads or save time
@@ -139,41 +139,41 @@ android.ant_path =
 # android.accept_sdk_license = False
 
 # (str) Android entry point, default is ok for Kivy-based app
-android.entrypoint = org.kivy.android.PythonActivity
+#android.entrypoint = org.kivy.android.PythonActivity
 
 # (str) Full name including package path of the Java class that implements Android Activity
 # use that parameter together with android.entrypoint to set custom Java class instead of PythonActivity
-android.activity_class_name = org.kivy.android.PythonActivity
+#android.activity_class_name = org.kivy.android.PythonActivity
 
 # (str) Extra xml to write directly inside the <manifest> element of AndroidManifest.xml
 # use that parameter to provide a filename from where to load your custom XML code
-android.extra_manifest_xml = ./src/android/extra_manifest.xml
+#android.extra_manifest_xml = ./src/android/extra_manifest.xml
 
 # (str) Extra xml to write directly inside the <manifest><application> tag of AndroidManifest.xml
 # use that parameter to provide a filename from where to load your custom XML arguments:
-android.extra_manifest_application_arguments = ./src/android/extra_manifest_application_arguments.xml
+#android.extra_manifest_application_arguments = ./src/android/extra_manifest_application_arguments.xml
 
 # (str) Full name including package path of the Java class that implements Python Service
 # use that parameter to set custom Java class which extends PythonService
-android.service_class_name = org.kivy.android.PythonService
+#android.service_class_name = org.kivy.android.PythonService
 
 # (str) Android app theme, default is ok for Kivy-based app
 # android.apptheme = "@android:style/Theme.NoTitleBar"
 
 # (list) Pattern to whitelist for the whole project
-android.whitelist =
+#android.whitelist =
 
 # (str) Path to a custom whitelist file
-android.whitelist_src =
+#android.whitelist_src =
 
 # (str) Path to a custom blacklist file
-android.blacklist_src =
+#android.blacklist_src =
 
 # (list) List of Java .jar files to add to the libs so that pyjnius can access
 # their classes. Don't add jars that you do not need, since extra jars can slow
 # down the build process. Allows wildcards matching, for example:
 # OUYA-ODK/libs/*.jar
-android.add_jars = foo.jar,bar.jar
+#android.add_jars = foo.jar,bar.jar
 
 # (list) List of Java files to add to the android project (can be java or a
 # directory containing the files)
@@ -249,15 +249,15 @@ android.add_jars = foo.jar,bar.jar
 #android.manifest.orientation = fullSensor
 
 # (list) Android additional libraries to copy into libs/armeabi
-android.add_libs_armeabi = libs/android/*.so
-android.add_libs_armeabi_v7a = libs/android-v7/*.so
-android.add_libs_arm64_v8a = libs/android-v8/*.so
-android.add_libs_x86 = libs/android-x86/*.so
-android.add_libs_mips = libs/android-mips/*.so
+#android.add_libs_armeabi = libs/android/*.so
+#android.add_libs_armeabi_v7a = libs/android-v7/*.so
+#android.add_libs_arm64_v8a = libs/android-v8/*.so
+#android.add_libs_x86 = libs/android-x86/*.so
+#android.add_libs_mips = libs/android-mips/*.so
 
 # (bool) Indicate whether the screen should stay on
 # Don't forget to add the WAKE_LOCK permission if you set this to True
-android.wakelock = False
+#android.wakelock = False
 
 # (list) Android application meta-data to set (key=value format)
 #android.meta_data =
@@ -276,7 +276,7 @@ android.wakelock = False
 #android.logcat_pid_only = False
 
 # (str) Android additional adb arguments
-android.adb_args = -H host.docker.internal
+#android.adb_args = -H host.docker.internal
 
 # (bool) Copy library instead of making a libpymodules.so
 #android.copy_libs = 1
@@ -304,13 +304,13 @@ android.buildozer.args = --with-build-python
 # android.manifest_placeholders = [:]
 
 # (bool) Skip byte compile for .py files
-android.no-byte-compile-python = False
+#android.no-byte-compile-python = False
 
 # (str) The format used to package the app for release mode (aab or apk or aar).
-android.release_artifact = apk
+#android.release_artifact = aab
 
 # (str) The format used to package the app for debug mode (apk or aar).
-android.debug_artifact = apk
+#android.debug_artifact = apk
 
 #
 # Python for android (p4a) specific
